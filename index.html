@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MiniTim SMP 🎃</title>
+<title>MiniTim SMP</title>
 
 <style>
 * {
@@ -768,7 +768,7 @@ footer {
             </p>
 
             <div class="server-version">
-                🎮 Версия: Minecraft Bedrock 1.26.45
+                🎮 Версия: Minecraft Bedrock 1.26.52
             </div>
 
             <p style="text-align:center; margin-top:20px;">
@@ -851,9 +851,6 @@ footer {
         <div class="commands">
 
             <div class="command">/rtp</div>
-            <div class="command">/tpa &lt;ник&gt;</div>
-            <div class="command">/tpa-y</div>
-            <div class="command">/tpa-n</div>
             <div class="command">/spawn</div>
             <div class="command">/report &lt;ник&gt;</div>
             <div class="command">/rules</div>
@@ -861,6 +858,9 @@ footer {
             <div class="command">/sethome &lt;имя&gt;</div>
             <div class="command">/home &lt;имя&gt;</div>
             <div class="command">/delhome &lt;имя&gt;</div>
+            <div class="command">/tpa &lt;ник игрока&gt;</div>
+            <div class="command">/tpa-y</div>
+            <div class="command">/tpa-n</div>
             <div class="command">/infocmd</div>
 
         </div>
@@ -922,7 +922,7 @@ footer {
 
 function copyServerInfo() {
 
-    const text = "MinitimSMP.minerent.io:19183";
+    const text = "Minitim.fun:19253";
 
     navigator.clipboard.writeText(text).catch(() => {
 
