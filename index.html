@@ -927,21 +927,38 @@ function copyServerInfo() {
 
     const text = "Minitim.fun:19253";
 
-    navigator.clipboard.writeText(text).catch(() => {
+    if (navigator.clipboard && window.isSecureContext) {
 
-        const input = document.createElement("textarea");
+        navigator.clipboard.writeText(text).catch(() => fallbackCopy(text));
 
-        input.value = text;
+    } else {
 
-        document.body.appendChild(input);
+        fallbackCopy(text);
 
-        input.select();
+    }
+}
 
+/* ===== РЕЗЕРВНЫЙ СПОСОБ ===== */
+
+function fallbackCopy(text) {
+
+    const input = document.createElement("textarea");
+
+    input.value = text;
+
+    input.style.position = "fixed";
+    input.style.opacity = "0";
+
+    document.body.appendChild(input);
+
+    input.focus();
+    input.select();
+
+    try {
         document.execCommand("copy");
+    } catch (e) {}
 
-        input.remove();
-
-    });
+    input.remove();
 }
 
 /* ===== ОТКРЫТИЕ ===== */
